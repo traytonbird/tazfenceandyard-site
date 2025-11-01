@@ -1,0 +1,256 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tazmanian Fence & Yard LLC | Kenai Peninsula, AK & Spokane, WA</title>
+  <meta name="description" content="Fencing (cedar, split rail, chain link, black chain link), gates & gate repairs, and yard services. Serving the Kenai Peninsula, AK and Spokane, WA. Free estimates.">
+  <meta name="theme-color" content="#111111">
+  <style>
+    :root{--bg:#0b0b0b; --card:#121212; --brand:#cc1d1d; --accent:#f1b619; --text:#f5f5f5; --muted:#9aa0a6; --ok:#20c997; --max:1100px;}
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;line-height:1.5}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max);margin:auto;padding:0 16px}
+    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(8px);background:rgba(11,11,11,.85);border-bottom:1px solid #222;z-index:10}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:8px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:44px;width:auto;display:block;border-radius:6px}
+    .brand h1{font-size:1.05rem;margin:0}
+    .menu a{margin-left:18px}
+    .btn{display:inline-block;background:var(--accent);color:#111;padding:12px 18px;border-radius:10px;font-weight:700}
+    .btn.secondary{background:#2b2b2b;color:#fff;border:1px solid #3a3a3a}
+    .hero{position:relative;padding:64px 0 48px;border-bottom:1px solid #1f1f1f;background:radial-gradient(1000px 300px at 50% -10%,rgba(204,29,29,.25),transparent)}
+    .hero .logo-big{max-width:min(820px,95%);border-radius:12px;border:1px solid #2a2a2a;background:#0f0f0f}
+    .hero h2{font-size:clamp(28px,4vw,44px);margin:14px 0 8px;font-weight:900;letter-spacing:.2px}
+    .hero p{color:var(--muted);max-width:750px;margin:6px auto 18px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+    .badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;color:#c9c9c9;justify-content:center}
+    .badges span{padding:6px 10px;border:1px solid #2b2b2b;border-radius:999px;background:#151515;font-size:.9rem}
+    section{padding:56px 0;border-bottom:1px solid #1f1f1f}
+    h3{font-size:clamp(22px,3vw,30px);margin:0 0 16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .card{background:var(--card);border:1px solid #1f1f1f;border-radius:16px;padding:18px}
+    .card h4{margin:0 0 8px}
+    .list{margin:.2rem 0 .4rem 0;padding:0 0 0 18px}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+    .gallery img,.gallery .ph{aspect-ratio:4/3;background:#1a1a1a;border:1px dashed #2a2a2a;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#7d7d7d;width:100%;height:auto;object-fit:cover}
+    .cols{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    @media (max-width:880px){.cols{grid-template-columns:1fr} .brand h1{display:none}}
+    footer{padding:36px 0;color:#c9c9c9}
+    .footgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .small{font-size:.92rem;color:#a9a9a9}
+    .phone{font-weight:800;color:#111;background:var(--ok);border-radius:8px;padding:4px 8px}
+    .notice{font-size:.9rem;color:#c9c9c9;margin-top:10px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:#141414;border:1px solid #242424;color:#d7d7d7}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <div class="brand">
+          <img id="brandLogo" src="assets/tazmanian-logo.jpg" alt="Tazmanian Fence & Yard LLC logo">
+          <h1 id="siteTitle">Tazmanian Fence & Yard LLC</h1>
+        </div>
+        <div class="menu">
+          <a href="#services">Services</a>
+          <a href="#areas">Areas</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact" class="btn">Get a Quote</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap" style="text-align:center">
+      <img class="logo-big" id="heroLogo" src="assets/tazmanian-logo.jpg" alt="Tazmanian Fence & Yard LLC">
+      <h2 id="heroHeadline">Quality Fencing Across Alaska & Washington</h2>
+      <p id="heroParagraph">Fencing (cedar, split rail, chain link, black chain link), gates & gate repairs, and yard services. Serving the Kenai Peninsula, Alaska and Spokane, Washington.</p>
+      <div class="cta-row">
+        <a id="ctaPrimary" class="btn" href="tel:+19072521374">Call Soldotna: 907-252-1374</a>
+        <a id="ctaSecondary" class="btn secondary" href="tel:+15098007118">Call Spokane: 509-800-7118</a>
+        <a class="pill" href="#contact">Free Same-Day Estimate</a>
+      </div>
+      <div id="badgeRow" class="badges">
+        <span>Cedar • Split Rail • Chain Link • Black Chain Link</span>
+        <span>Gates & Gate Repairs</span>
+        <span>Yard Services</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <h3>Services</h3>
+      <div class="grid">
+        <div class="card">
+          <h4 id="svc1Title">Fencing</h4>
+          <p id="svc1Desc">Built to last with clean lines and strong hardware.</p>
+          <ul id="svc1List" class="list"></ul>
+        </div>
+        <div class="card">
+          <h4 id="svc2Title">Gate Repairs</h4>
+          <p id="svc2Desc">Fast fixes that keep your gate swinging and latching like new.</p>
+          <ul id="svc2List" class="list"></ul>
+        </div>
+        <div class="card">
+          <h4 id="svc3Title">Yard Services</h4>
+          <p id="svc3Desc">Keep your property tidy — bundled with fence projects or as stand-alone.</p>
+          <ul id="svc3List" class="list"></ul>
+        </div>
+        <div class="card">
+          <h4 id="svc4Title">Repairs & Upgrades</h4>
+          <p id="svc4Desc">Quick fixes or full sections replaced to match your existing look.</p>
+          <ul id="svc4List" class="list"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="areas">
+    <div class="wrap cols">
+      <div>
+        <h3>Where We Work</h3>
+        <div class="card">
+          <h4 id="akTitle">Kenai Peninsula, Alaska</h4>
+          <p id="akDesc" class="small">Soldotna, Kenai, Sterling, Kasilof, Nikiski, & nearby communities.</p>
+          <p><a id="akPhone" class="phone" href="tel:+19072521374">Call 907-252-1374</a></p>
+        </div>
+        <div class="card">
+          <h4 id="waTitle">Spokane, Washington</h4>
+          <p id="waDesc" class="small">Spokane, Spokane Valley, Liberty Lake, Airway Heights, Mead, Nine Mile Falls, & surrounding.</p>
+          <p><a id="waPhone" class="phone" href="tel:+15098007118">Call 509-800-7118</a></p>
+        </div>
+      </div>
+      <div>
+        <h3>Why Choose Us</h3>
+        <div class="card">
+          <ul class="list">
+            <li>Local crews, dependable scheduling</li>
+            <li>Transparent estimates — no surprises</li>
+            <li>Licensed & insured</li>
+            <li>Owner-operated quality control</li>
+          </ul>
+          <p class="notice">Have plans or photos of your yard? Attach them in the quote form for faster pricing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <h3>Recent Work</h3>
+      <div id="galleryGrid" class="gallery">
+        <div class="ph">Add photo 1</div>
+        <div class="ph">Add photo 2</div>
+        <div class="ph">Add photo 3</div>
+        <div class="ph">Add photo 4</div>
+        <div class="ph">Add photo 5</div>
+        <div class="ph">Add photo 6</div>
+      </div>
+      <p class="small" style="margin-top:8px">Tip: add photos through your admin panel. Images will appear here automatically.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap cols">
+      <div>
+        <h3>Request a Free Estimate</h3>
+        <form class="card" action="mailto:estimates@tazmanianfence.com" method="post" enctype="text/plain">
+          <label>Name<br><input name="name" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #2a2a2a;background:#0f0f0f;color:#fff"></label><br><br>
+          <label>Phone<br><input name="phone" style="width:100%;padding:10px;border-radius:8px;border:1px solid #2a2a2a;background:#0f0f0f;color:#fff"></label><br><br>
+          <label>Service Area<br>
+            <select name="area" style="width:100%;padding:10px;border-radius:8px;border:1px solid #2a2a2a;background:#0f0f0f;color:#fff">
+              <option>Kenai Peninsula, AK</option>
+              <option>Spokane, WA</option>
+            </select>
+          </label><br><br>
+          <label>Project details<br>
+            <textarea name="details" rows="5" placeholder="Fence type, length, timeline..." style="width:100%;padding:10px;border-radius:8px;border:1px solid #2a2a2a;background:#0f0f0f;color:#fff"></textarea>
+          </label><br><br>
+          <button class="btn" type="submit">Send Request</button>
+        </form>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <div class="card" id="contactPhones">
+          <p><strong>Soldotna:</strong> <a href="tel:+19072521374">907-252-1374</a><br>
+             <strong>Spokane:</strong> <a href="tel:+15098007118">509-800-7118</a></p>
+          <p class="small" id="contactHours">Hours: Mon–Sat 8am–6pm</p>
+        </div>
+        <div class="card">
+          <h4>Pro Tip</h4>
+          <p class="small">Keep your Google Business Profiles consistent: use the exact same name, phone, and service areas listed here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footgrid">
+      <div>
+        <strong id="footerTitle">Tazmanian Fence & Yard LLC</strong>
+        <p class="small">Serving the Kenai Peninsula, AK and Spokane, WA</p>
+      </div>
+      <div class="small">
+        © <span id="y"></span> <span id="footerTitle2">Tazmanian Fence & Yard LLC</span> — All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('y').textContent=new Date().getFullYear();
+    fetch('content.site.json').then(r=>r.json()).then(data=>{
+      document.getElementById('brandLogo').src = data.branding.logo || 'assets/tazmanian-logo.jpg';
+      document.getElementById('heroLogo').src = data.branding.logo || 'assets/tazmanian-logo.jpg';
+      document.getElementById('siteTitle').textContent = data.branding.site_title || 'Tazmanian Fence & Yard LLC';
+      document.getElementById('footerTitle').textContent = data.branding.site_title || 'Tazmanian Fence & Yard LLC';
+      document.getElementById('footerTitle2').textContent = data.branding.site_title || 'Tazmanian Fence & Yard LLC';
+
+      document.getElementById('heroHeadline').textContent = data.hero.headline;
+      document.getElementById('heroParagraph').textContent = data.hero.paragraph;
+      const cta1 = document.getElementById('ctaPrimary');
+      cta1.textContent = data.hero.primary_cta.label;
+      cta1.href = 'tel:' + data.hero.primary_cta.tel;
+      const cta2 = document.getElementById('ctaSecondary');
+      cta2.textContent = data.hero.secondary_cta.label;
+      cta2.href = 'tel:' + data.hero.secondary_cta.tel;
+
+      const badgeRow = document.getElementById('badgeRow');
+      badgeRow.innerHTML = '';
+      (data.hero.badges||[]).forEach(b=>{ const span=document.createElement('span'); span.textContent=b; badgeRow.appendChild(span); });
+
+      function fillCard(baseId, obj){
+        document.getElementById(baseId+'Title').textContent = obj.title;
+        document.getElementById(baseId+'Desc').textContent = obj.desc;
+        const ul = document.getElementById(baseId+'List');
+        ul.innerHTML = '';
+        (obj.items||[]).forEach(it=>{ const li=document.createElement('li'); li.textContent = it; ul.appendChild(li); });
+      }
+      fillCard('svc1', data.services.fencing);
+      fillCard('svc2', data.services.gate_repairs);
+      fillCard('svc3', data.services.yard);
+      fillCard('svc4', data.services.repairs);
+
+      document.getElementById('akTitle').textContent = data.areas.ak.title;
+      document.getElementById('akDesc').textContent = data.areas.ak.desc;
+      const akp = document.getElementById('akPhone'); akp.textContent = data.areas.ak.phone_label; akp.href = 'tel:' + data.areas.ak.tel;
+      document.getElementById('waTitle').textContent = data.areas.wa.title;
+      document.getElementById('waDesc').textContent = data.areas.wa.desc;
+      const wap = document.getElementById('waPhone'); wap.textContent = data.areas.wa.phone_label; wap.href = 'tel:' + data.areas.wa.tel;
+
+      document.getElementById('contactHours').textContent = 'Hours: ' + data.contact.hours;
+      const cp = document.getElementById('contactPhones');
+      cp.innerHTML = data.contact.phones.map(ph => `<p><strong>${ph.label}:</strong> <a href="tel:${ph.tel}">${ph.display}</a></p>`).join('');
+
+      const grid = document.getElementById('galleryGrid');
+      if((data.gallery.images||[]).length){
+        grid.innerHTML = '';
+        data.gallery.images.forEach(src=>{ const img=document.createElement('img'); img.src=src; img.alt='Project photo'; grid.appendChild(img); });
+      }
+    }).catch(e=>console.error(e));
+  </script>
+</body>
+</html>
