@@ -151,7 +151,7 @@
     <div class="wrap cols">
       <div>
         <h3>Request a Free Estimate</h3>
-        <form class="card" action="mailto:estimates@tazmanianfence.com" method="post" enctype="text/plain">
+        <form class="card" id="estimateForm">
           <label>Name<br><input name="name" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #2a2a2a;background:#0f0f0f;color:#fff"></label><br><br>
           <label>Phone<br><input name="phone" style="width:100%;padding:10px;border-radius:8px;border:1px solid #2a2a2a;background:#0f0f0f;color:#fff"></label><br><br>
           <label>Service Area<br>
@@ -252,5 +252,38 @@
       }
     }).catch(e=>console.error(e));
   </script>
+  <script>
+  const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbyE3D6AjltCVK1nlrua19lnyzwpLlalJy5hRFiKUfqvSO-5bEhKfR1Kly9bYcXPxe215Q/exec";
+
+  const form = document.getElementById("estimateForm");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name") || "",
+      phone: formData.get("phone") || "",
+      area: formData.get("area") || "",
+      details: formData.get("details") || "",
+      source: window.location.hostname || "Website"
+    };
+
+    try {
+      await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload),
+      });
+
+      alert("Thanks! Your estimate request was sent. We'll contact you soon.");
+      form.reset();
+
+    } catch (err) {
+      alert("Something went wrong. Please call us directly.");
+    }
+  });
+</script>
 </body>
 </html>
