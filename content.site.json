@@ -1,14 +1,10 @@
 {
   "hero": {
-    "headline": "Quality Fencing Across Alaska & Washington",
+    "headline": "Quality Fencing Across Alaska",
     "paragraph": "Fencing (cedar, split rail, chain link, black chain link), gates & gate repairs, and yard services. Serving the Kenai Peninsula, Alaska and Spokane, Washington.",
     "primary_cta": {
       "label": "Call Soldotna: 907-252-1374",
       "tel": "+19072521374"
-    },
-    "secondary_cta": {
-      "label": "Call Spokane: 509-800-7118",
-      "tel": "+15098007118"
     },
     "badges": [
       "Cedar \u2022 Split Rail \u2022 Chain Link \u2022 Black Chain Link",
@@ -63,12 +59,6 @@
       "desc": "Soldotna, Kenai, Sterling, Kasilof, Nikiski, & nearby communities.",
       "phone_label": "Call 907-252-1374",
       "tel": "+19072521374"
-    },
-    "wa": {
-      "title": "Spokane, Washington",
-      "desc": "Spokane, Spokane Valley, Liberty Lake, Airway Heights, Mead, Nine Mile Falls, & surrounding.",
-      "phone_label": "Call 509-800-7118",
-      "tel": "+15098007118"
     }
   },
   "contact": {
@@ -79,11 +69,6 @@
         "display": "907-252-1374",
         "tel": "+19072521374"
       },
-      {
-        "label": "Spokane",
-        "display": "509-800-7118",
-        "tel": "+15098007118"
-      }
     ]
   },
   "gallery": {
