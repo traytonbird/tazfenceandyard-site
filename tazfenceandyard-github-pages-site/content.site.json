@@ -1,0 +1,96 @@
+{
+  "hero": {
+    "headline": "Quality Fencing Across Alaska & Washington",
+    "paragraph": "Fencing (cedar, split rail, chain link, black chain link), gates & gate repairs, and yard services. Serving the Kenai Peninsula, Alaska and Spokane, Washington.",
+    "primary_cta": {
+      "label": "Call Soldotna: 907-252-1374",
+      "tel": "+19072521374"
+    },
+    "secondary_cta": {
+      "label": "Call Spokane: 509-800-7118",
+      "tel": "+15098007118"
+    },
+    "badges": [
+      "Cedar \u2022 Split Rail \u2022 Chain Link \u2022 Black Chain Link",
+      "Gates & Gate Repairs",
+      "Yard Services"
+    ]
+  },
+  "services": {
+    "fencing": {
+      "title": "Fencing",
+      "desc": "Built to last with clean lines and strong hardware.",
+      "items": [
+        "Cedar privacy (board-on-board, horizontal, shadowbox)",
+        "Split Rail (2- or 3-rail, wire optional)",
+        "Chain Link (galvanized)",
+        "Black Chain Link (vinyl-coated)",
+        "Gates (pedestrian & driveway)"
+      ]
+    },
+    "gate_repairs": {
+      "title": "Gate Repairs",
+      "desc": "Fast fixes that keep your gate swinging and latching like new.",
+      "items": [
+        "Post resets & hinge/latch replacement",
+        "Gate re\u2011square & alignment",
+        "Operator/travel adjustments (where applicable)"
+      ]
+    },
+    "yard": {
+      "title": "Yard Services",
+      "desc": "Keep your property tidy \u2014 bundled with fence projects or as stand-alone.",
+      "items": [
+        "Mowing & trimming",
+        "Spring/Fall cleanups",
+        "Brush & debris hauling",
+        "Small yard projects & post setting"
+      ]
+    },
+    "repairs": {
+      "title": "Repairs & Upgrades",
+      "desc": "Quick fixes or full sections replaced to match your existing look.",
+      "items": [
+        "Storm & post repairs",
+        "Gate hardware upgrades",
+        "Stain & protection options"
+      ]
+    }
+  },
+  "areas": {
+    "ak": {
+      "title": "Kenai Peninsula, Alaska",
+      "desc": "Soldotna, Kenai, Sterling, Kasilof, Nikiski, & nearby communities.",
+      "phone_label": "Call 907-252-1374",
+      "tel": "+19072521374"
+    },
+    "wa": {
+      "title": "Spokane, Washington",
+      "desc": "Spokane, Spokane Valley, Liberty Lake, Airway Heights, Mead, Nine Mile Falls, & surrounding.",
+      "phone_label": "Call 509-800-7118",
+      "tel": "+15098007118"
+    }
+  },
+  "contact": {
+    "hours": "Mon\u2013Sat 8am\u20136pm",
+    "phones": [
+      {
+        "label": "Soldotna",
+        "display": "907-252-1374",
+        "tel": "+19072521374"
+      },
+      {
+        "label": "Spokane",
+        "display": "509-800-7118",
+        "tel": "+15098007118"
+      }
+    ]
+  },
+  "gallery": {
+    "images": []
+  },
+  "branding": {
+    "logo": "assets/tazmanian-logo.jpg",
+    "site_title": "Tazmanian Fence & Yard LLC"
+  }
+}
