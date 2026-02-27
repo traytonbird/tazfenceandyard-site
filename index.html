@@ -172,7 +172,8 @@
           <label>Project details<br>
             <textarea name="details" rows="5" placeholder="Fence type, length, timeline..." style="width:100%;padding:10px;border-radius:8px;border:1px solid #2a2a2a;background:#0f0f0f;color:#fff"></textarea>
           </label><br><br>
-          <button class="btn" type="submit">Send Request</button>
+          <button class="btn" id="submitBtn" type="submit">Send Request</button>
+          <p id="formStatus" class="small" style="margin-top:10px"></p>
         </form>
       </div>
       <div>
@@ -256,12 +257,24 @@
   const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbyE3D6AjltCVK1nlrua19lnyzwpLlalJy5hRFiKUfqvSO-5bEhKfR1Kly9bYcXPxe215Q/exec";
 
   const form = document.getElementById("estimateForm");
+  const btn = document.getElementById("submitBtn");
+  const statusEl = document.getElementById("formStatus");
+
+  function setStatus(msg, ok = true) {
+    statusEl.textContent = msg;
+    statusEl.style.color = ok ? "#20c997" : "#ff6b6b";
+  }
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const formData = new FormData(form);
+    // Instant feedback
+    btn.disabled = true;
+    const oldText = btn.textContent;
+    btn.textContent = "Sending…";
+    setStatus("Submitting your request…", true);
 
+    const formData = new FormData(form);
     const payload = {
       name: formData.get("name") || "",
       phone: formData.get("phone") || "",
@@ -273,15 +286,20 @@
     try {
       await fetch(FORM_ENDPOINT, {
         method: "POST",
+        mode: "no-cors",
         headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(payload),
       });
 
-      alert("Thanks! Your estimate request was sent. We'll contact you soon.");
+      // Success UI
+      setStatus("Request sent! We’ll reach out soon.", true);
       form.reset();
 
     } catch (err) {
-      alert("Something went wrong. Please call us directly.");
+      setStatus("Couldn’t send. Please call 907-252-1374.", false);
+    } finally {
+      btn.disabled = false;
+      btn.textContent = oldText;
     }
   });
 </script>
