@@ -209,9 +209,6 @@
       const cta1 = document.getElementById('ctaPrimary');
       cta1.textContent = data.hero.primary_cta.label;
       cta1.href = 'tel:' + data.hero.primary_cta.tel;
-      const cta2 = document.getElementById('ctaSecondary');
-      cta2.textContent = data.hero.secondary_cta.label;
-      cta2.href = 'tel:' + data.hero.secondary_cta.tel;
 
       const badgeRow = document.getElementById('badgeRow');
       badgeRow.innerHTML = '';
@@ -232,9 +229,6 @@
       document.getElementById('akTitle').textContent = data.areas.ak.title;
       document.getElementById('akDesc').textContent = data.areas.ak.desc;
       const akp = document.getElementById('akPhone'); akp.textContent = data.areas.ak.phone_label; akp.href = 'tel:' + data.areas.ak.tel;
-      document.getElementById('waTitle').textContent = data.areas.wa.title;
-      document.getElementById('waDesc').textContent = data.areas.wa.desc;
-      const wap = document.getElementById('waPhone'); wap.textContent = data.areas.wa.phone_label; wap.href = 'tel:' + data.areas.wa.tel;
 
       document.getElementById('contactHours').textContent = 'Hours: ' + data.contact.hours;
       const cp = document.getElementById('contactPhones');
