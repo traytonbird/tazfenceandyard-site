@@ -251,11 +251,6 @@
       if (data.areas?.ak) {
         document.getElementById('akTitle').textContent = data.areas.ak.title || 'Kenai Peninsula, Alaska';
         document.getElementById('akDesc').textContent = data.areas.ak.desc || '';
-        const akp = document.getElementById('akPhone');
-        if (akp) {
-          akp.textContent = data.areas.ak.phone_label || 'Call 907-252-1374';
-          akp.href = 'tel:' + (data.areas.ak.tel || '+19072521374');
-        }
       }
 
       // Contact
