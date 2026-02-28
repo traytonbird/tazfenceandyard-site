@@ -199,7 +199,6 @@
   </footer>
   <script>
     document.getElementById('y').textContent=new Date().getFullYear();
-    fetch('content.site.json').then(r=>r.json()).then(data=>{
       document.getElementById('brandLogo').src = data.branding.logo || 'assets/tazmanian-logo.jpg';
       document.getElementById('heroLogo').src = data.branding.logo || 'assets/tazmanian-logo.jpg';
       document.getElementById('siteTitle').textContent = data.branding.site_title || 'Tazmanian Fence & Yard LLC';
@@ -207,7 +206,6 @@
       document.getElementById('footerTitle2').textContent = data.branding.site_title || 'Tazmanian Fence & Yard LLC';
 
       document.getElementById('heroHeadline').textContent = data.hero.headline;
-      document.getElementById('heroParagraph').textContent = data.hero.paragraph;
       const cta1 = document.getElementById('ctaPrimary');
       cta1.textContent = data.hero.primary_cta.label;
       cta1.href = 'tel:' + data.hero.primary_cta.tel;
