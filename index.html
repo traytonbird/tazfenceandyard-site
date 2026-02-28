@@ -270,14 +270,43 @@
 
       // Contact
       if (data.contact?.hours) {
-        document.getElementById('contactHours').textContent = 'Hours: ' + data.contact.hours;
+        document.getElementById('contactHours').textContent =
+          'Hours: ' + data.contact.hours;
       }
+
       const cp = document.getElementById('contactPhones');
-      if (cp && Array.isArray(data.contact?.phones)) {
-        cp.innerHTML = data.contact.phones
-          .map(ph => `<p><strong>${ph.label}:</strong> <a href="tel:${ph.tel}">${ph.display}</a></p>`)
+
+      if (cp) {
+        let phoneHTML = '';
+
+        if (Array.isArray(data.contact?.phones)) {
+          phoneHTML = data.contact.phones
+            .map(ph => `
+              <p>
+                <strong>${ph.label}:</strong>
+                <a href="tel:${ph.tel}" style="color:#f1b619;font-weight:700;">
+                  ${ph.display}
+              </a>
+            </p>
+          `)
           .join('');
       }
+
+      let emailHTML = '';
+
+      if (data.contact?.email) {
+        emailHTML = `
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:${data.contact.email}" style="color:#f1b619;font-weight:700;">
+              ${data.contact.email}
+            </a>
+          </p>
+        `;
+      }
+
+      cp.innerHTML = phoneHTML + emailHTML;
+    }
 
       // Gallery
       const grid = document.getElementById('galleryGrid');
