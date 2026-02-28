@@ -197,49 +197,94 @@
       </div>
     </div>
   </footer>
-  <script>
-    document.getElementById('y').textContent=new Date().getFullYear();
-      document.getElementById('brandLogo').src = data.branding.logo || 'assets/tazmanian-logo.jpg';
-      document.getElementById('heroLogo').src = data.branding.logo || 'assets/tazmanian-logo.jpg';
-      document.getElementById('siteTitle').textContent = data.branding.site_title || 'Tazmanian Fence & Yard LLC';
-      document.getElementById('footerTitle').textContent = data.branding.site_title || 'Tazmanian Fence & Yard LLC';
-      document.getElementById('footerTitle2').textContent = data.branding.site_title || 'Tazmanian Fence & Yard LLC';
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
 
-      document.getElementById('heroHeadline').textContent = data.hero.headline;
+  fetch('content.site.json')
+    .then(r => r.json())
+    .then(data => {
+      // Branding
+      document.getElementById('brandLogo').src = data.branding?.logo || 'assets/tazmanian-logo.jpg';
+      document.getElementById('heroLogo').src = data.branding?.logo || 'assets/tazmanian-logo.jpg';
+      document.getElementById('siteTitle').textContent = data.branding?.site_title || 'Tazmanian Fence & Yard LLC';
+      document.getElementById('footerTitle').textContent = data.branding?.site_title || 'Tazmanian Fence & Yard LLC';
+      document.getElementById('footerTitle2').textContent = data.branding?.site_title || 'Tazmanian Fence & Yard LLC';
+
+      // Hero
+      document.getElementById('heroHeadline').textContent = data.hero?.headline || 'Quality Fencing Across Alaska';
       const cta1 = document.getElementById('ctaPrimary');
-      cta1.textContent = data.hero.primary_cta.label;
-      cta1.href = 'tel:' + data.hero.primary_cta.tel;
+      if (data.hero?.primary_cta?.label) cta1.textContent = data.hero.primary_cta.label;
+      if (data.hero?.primary_cta?.tel) cta1.href = 'tel:' + data.hero.primary_cta.tel;
 
+      // Badges
       const badgeRow = document.getElementById('badgeRow');
-      badgeRow.innerHTML = '';
-      (data.hero.badges||[]).forEach(b=>{ const span=document.createElement('span'); span.textContent=b; badgeRow.appendChild(span); });
+      if (badgeRow && Array.isArray(data.hero?.badges)) {
+        badgeRow.innerHTML = '';
+        data.hero.badges.forEach(b => {
+          const span = document.createElement('span');
+          span.textContent = b;
+          badgeRow.appendChild(span);
+        });
+      }
 
-      function fillCard(baseId, obj){
-        document.getElementById(baseId+'Title').textContent = obj.title;
-        document.getElementById(baseId+'Desc').textContent = obj.desc;
-        const ul = document.getElementById(baseId+'List');
+      // Services helper
+      function fillCard(baseId, obj) {
+        const t = document.getElementById(baseId + 'Title');
+        const d = document.getElementById(baseId + 'Desc');
+        const ul = document.getElementById(baseId + 'List');
+        if (!t || !d || !ul || !obj) return;
+
+        t.textContent = obj.title || '';
+        d.textContent = obj.desc || '';
         ul.innerHTML = '';
-        (obj.items||[]).forEach(it=>{ const li=document.createElement('li'); li.textContent = it; ul.appendChild(li); });
+        (obj.items || []).forEach(it => {
+          const li = document.createElement('li');
+          li.textContent = it;
+          ul.appendChild(li);
+        });
       }
-      fillCard('svc1', data.services.fencing);
-      fillCard('svc2', data.services.gate_repairs);
-      fillCard('svc3', data.services.yard);
-      fillCard('svc4', data.services.repairs);
 
-      document.getElementById('akTitle').textContent = data.areas.ak.title;
-      document.getElementById('akDesc').textContent = data.areas.ak.desc;
-      const akp = document.getElementById('akPhone'); akp.textContent = data.areas.ak.phone_label; akp.href = 'tel:' + data.areas.ak.tel;
+      fillCard('svc1', data.services?.fencing);
+      fillCard('svc2', data.services?.gate_repairs);
+      fillCard('svc3', data.services?.yard);
+      fillCard('svc4', data.services?.repairs);
 
-      document.getElementById('contactHours').textContent = 'Hours: ' + data.contact.hours;
+      // Areas (AK only)
+      if (data.areas?.ak) {
+        document.getElementById('akTitle').textContent = data.areas.ak.title || 'Kenai Peninsula, Alaska';
+        document.getElementById('akDesc').textContent = data.areas.ak.desc || '';
+        const akp = document.getElementById('akPhone');
+        if (akp) {
+          akp.textContent = data.areas.ak.phone_label || 'Call 907-252-1374';
+          akp.href = 'tel:' + (data.areas.ak.tel || '+19072521374');
+        }
+      }
+
+      // Contact
+      if (data.contact?.hours) {
+        document.getElementById('contactHours').textContent = 'Hours: ' + data.contact.hours;
+      }
       const cp = document.getElementById('contactPhones');
-      cp.innerHTML = data.contact.phones.map(ph => `<p><strong>${ph.label}:</strong> <a href="tel:${ph.tel}">${ph.display}</a></p>`).join('');
-
-      const grid = document.getElementById('galleryGrid');
-      if((data.gallery.images||[]).length){
-        grid.innerHTML = '';
-        data.gallery.images.forEach(src=>{ const img=document.createElement('img'); img.src=src; img.alt='Project photo'; grid.appendChild(img); });
+      if (cp && Array.isArray(data.contact?.phones)) {
+        cp.innerHTML = data.contact.phones
+          .map(ph => `<p><strong>${ph.label}:</strong> <a href="tel:${ph.tel}">${ph.display}</a></p>`)
+          .join('');
       }
-    }).catch(e=>console.error(e));
+
+      // Gallery
+      const grid = document.getElementById('galleryGrid');
+      const imgs = data.gallery?.images || [];
+      if (grid && imgs.length) {
+        grid.innerHTML = '';
+        imgs.forEach(src => {
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = 'Project photo';
+          grid.appendChild(img);
+        });
+      }
+    })
+    .catch(e => console.error('content.site.json load error:', e));
   </script>
   <script>
   const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbyE3D6AjltCVK1nlrua19lnyzwpLlalJy5hRFiKUfqvSO-5bEhKfR1Kly9bYcXPxe215Q/exec";
